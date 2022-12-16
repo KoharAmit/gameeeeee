@@ -1,0 +1,23 @@
+﻿@model IEnumerable<GameHub.Models.Category>
+
+@{
+    ViewData["Title"] = "Shop our Store";
+}
+
+<h1>Shop our Store</h1>
+
+<section>
+    <div class="row">
+        @foreach (var category in Model) {
+            <div class="col-lg-4 mb-3">
+                <div class="card mb-3 text-center h-100">
+                    <div class="card-body">
+                        <a asp-action="ByCategory" asp-route-name="@category.Name">
+                            @category.Name
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
